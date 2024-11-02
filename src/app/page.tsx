@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation'
 
 const HomePage: React.FC = () => {
-  redirect('/dashboard')
+  redirect('/dashboard/order')
 };
 
 export default HomePage;

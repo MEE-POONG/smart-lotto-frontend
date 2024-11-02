@@ -29,7 +29,7 @@ const LotteryCard: React.FC<Lottery> = ({ lottery_id, lottery_name, image_url, d
     }, [draw_date]);
 
     return (
-        <Link href={`/dashboard/${lottery_id}`} className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 md:m-2 flex justify-between flex-col relative">
+        <Link href={`/dashboard/order/${lottery_id}`} className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 md:m-2 flex justify-between flex-col relative">
             <Image
                 src={image_url}
                 alt={lottery_name}

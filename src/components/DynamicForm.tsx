@@ -72,6 +72,8 @@ const DynamicForm: React.FC = () => {
         if (isSuccessOrderItem) {
             setShowSuccessModal(true);
         }
+        refetch();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isSuccessOrderItem]);
 
     useEffect(() => {
@@ -106,7 +108,6 @@ const DynamicForm: React.FC = () => {
             const orderItems = [...orderItemsUp, ...orderItemsDown, ...orderItemsTote];
             createOrderItems(orderItems);
             setBetData([]);
-            refetch();
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isSuccess]);
@@ -116,7 +117,6 @@ const DynamicForm: React.FC = () => {
             <div className="bg-white shadow-lg rounded-lg p-6 mb-6 w-full">
                 <CustomerForm
                     customers={customers || []}
-                    selectedCustomer={selectedCustomer || ''}
                     setSelectedCustomer={setSelectedCustomer}
                 />
 
@@ -206,7 +206,7 @@ const DynamicForm: React.FC = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {orders?.map((o: Order) => (
+                            {orders?.sort((a: Order, b: Order) => new Date(b.order_date).getTime() - new Date(a.order_date).getTime())?.map((o: Order) => (
                                 <tr key={o.order_id}>
                                     <td className="py-1 text-gray-600 border border-gray-200 p-2">{o.customer?.customer_name}</td>
                                     <td className="py-1 text-blue-600 font-semibold text-right border border-gray-200 p-2">{Number(o.total_price).toLocaleString()}</td>
