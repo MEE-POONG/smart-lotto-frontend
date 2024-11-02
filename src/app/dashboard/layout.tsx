@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
-import { Providers } from "./providers";
+import "../globals.css";
+import Sidebar from "@/components/Sidebar";
+import { Providers } from "../providers";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -15,7 +16,7 @@ import { Providers } from "./providers";
 // });
 
 const chakraPetch = localFont({
-  src: "../fonts/ChakraPetch-Regular.ttf",
+  src: "../../fonts/ChakraPetch-Regular.ttf",
   variable: "--font-chakra-petch",
   weight: "100 200 300 400 500 600 700 800 900",
 });
@@ -34,7 +35,10 @@ export default function RootLayout({
     <html lang="th">
       <body
         className={`${chakraPetch.className} min-h-screen bg-gradient-to-b from-gray-50 to-gray-100`}>
-        <Providers>{children}</Providers>
+        <Sidebar />
+        <div className="ml-[20%]">
+          <Providers>{children}</Providers>
+        </div>
       </body>
     </html>
   );
