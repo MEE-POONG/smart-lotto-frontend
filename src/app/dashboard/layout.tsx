@@ -33,11 +33,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="th">
-      <body
-        className={`${chakraPetch.className} min-h-screen bg-gradient-to-b from-gray-50 to-gray-100`}>
-        <Sidebar />
-        <div className="ml-[20%]">
-          <Providers>{children}</Providers>
+      <body className={`${chakraPetch.className} min-h-screen bg-gradient-to-b from-gray-50 to-gray-100`}>
+        <div className="flex">
+          {/* Sidebar */}
+          <div className="w-64 fixed h-screen">
+            <Sidebar />
+          </div>
+          
+          {/* Main Content */}
+          <div className="flex-1 ml-64">
+            <Providers>{children}</Providers>
+          </div>
         </div>
       </body>
     </html>
