@@ -25,6 +25,17 @@ const Sidebar: React.FC = () => {
             )
         },
         {
+            href: "/dashboard/customer",
+            label: "ลูกค้า",
+            icon: (
+                <svg className="h-6 w-6" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" />
+                    <circle cx="12" cy="7" r="4" />
+                    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                </svg>
+            )
+        },
+        {
             href: "/dashboard/wallet",
             label: "กระเป๋าเงิน",
             icon: (
@@ -48,22 +59,11 @@ const Sidebar: React.FC = () => {
                 </svg>
             )
         },
-        {
-            href: "/dashboard/customer",
-            label: "ลูกค้า",
-            icon: (
-                <svg className="h-6 w-6" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" />
-                    <circle cx="12" cy="7" r="4" />
-                    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                </svg>
-            )
-        }
     ];
 
     const onLogout = () => {
         deleteCookie('token');
-        router.push('/auth/login');
+        router.refresh();
     }
 
     return (
