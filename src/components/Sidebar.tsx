@@ -18,9 +18,12 @@ const Sidebar: React.FC = () => {
             icon: (
                 <svg className="h-6 w-6" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" />
-                    <polyline points="5 12 3 12 12 3 21 12 19 12" />
-                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-                    <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 3v4" />
+                    <path d="M12 17v4" />
+                    <path d="M3 12h4" />
+                    <path d="M17 12h4" />
+                    <circle cx="12" cy="12" r="3" />
                 </svg>
             )
         },
@@ -32,6 +35,18 @@ const Sidebar: React.FC = () => {
                     <path stroke="none" d="M0 0h24v24H0z" />
                     <circle cx="12" cy="7" r="4" />
                     <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                </svg>
+            )
+        },
+        {
+            href: "/dashboard/lotteries",
+            label: "ล็อตโตะ",
+            icon: (
+                <svg className="h-6 w-6" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" />
+                    <rect x="4" y="4" width="16" height="16" rx="2" />
+                    <line x1="4" y1="10" x2="20" y2="10" />
+                    <line x1="10" y1="4" x2="10" y2="20" />
                 </svg>
             )
         },
